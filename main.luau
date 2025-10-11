@@ -11,7 +11,7 @@ local success, err = pcall(function()
       end
   end
   
-  for i,v in getconnections(game:GetService("ReplicatedStorage").Remotes.AnalyticsPipeline.RemoteEvent.OnClientEvent) do
+  for i,v in getconnections(game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AnalyticsPipeline"):WaitForChild("RemoteEvent").OnClientEvent) do
       hookfunction(v.Function, function() end)
   end
 end)
