@@ -7,12 +7,14 @@ local success, err = pcall(function()
     
   for _,v in getgc() do
       if typeof(v) == "function" and string.find(debug.info(v, "s"), "AnalyticsPipelineController") then
+          print("Hanging Anticheat script...")
           hookfunction(v, function() return task.wait(9e9) end)
       end
   end
   
-  for i,v in getconnections(game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AnalyticsPipeline"):WaitForChild("RemoteEvent").OnClientEvent) do
-      hookfunction(v.Function, function() end)
+  for _,v in getconnections(game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AnalyticsPipeline"):WaitForChild("RemoteEvent").OnClientEvent) do
+    print("Hooking Anticheat client event...")  
+    hookfunction(v.Function, function() end)
   end
 end)
 
