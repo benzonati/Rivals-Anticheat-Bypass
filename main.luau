@@ -16,6 +16,11 @@ local success, err = pcall(function()
     print("Hooking Anticheat client event...")  
     hookfunction(v.Function, function() end)
   end
+
+	for _, v in getconnections(game:GetService("LogService").MessageOut) do 
+		print("Hooking MessageOut event...")  
+		hookfunction(v.Function, function() end)
+	end
 end)
 
 if not success then
