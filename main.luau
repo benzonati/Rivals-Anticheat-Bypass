@@ -4,6 +4,7 @@ end
 if game.GameId ~= 6035872082 then
     return
 end
+local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 repeat
     task.wait()
