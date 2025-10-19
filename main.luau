@@ -106,7 +106,16 @@ local success, err = pcall(function()
     end)
 end)
 if not success then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+    	Title = "Rivals Anticheat Disabler",
+    	Text = "Error, please check console",
+    	Duration = 5
+    })
     print("Rivals Anticheat Disabler failed: " .. tostring(err))
 else
-    print("Rivals Anticheat disabled!")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+    	Title = "Rivals Anticheat Disabler",
+    	Text = "Successfully disabled anticheat!",
+    	Duration = 5
+    })
 end
