@@ -4,11 +4,10 @@ end
 if game.GameId ~= 6035872082 then
     return
 end
+
 local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-repeat
-    task.wait()
-until LocalPlayer
+local LocalPlayer = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() and Players.LocalPlayer
+
 print("Rivals Anticheat Disabler executed!")
 local success, err = pcall(function()
     assert(getgc, "executor missing required function getgc")
