@@ -110,7 +110,7 @@ if not success then
     	Text = "Error, please check console",
     	Duration = 5
     })
-    print("Rivals Anticheat Disabler failed: " .. tostring(err))
+    warn("Rivals Anticheat Disabler failed: " .. tostring(err))
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
     	Title = "Rivals Anticheat Disabler",
